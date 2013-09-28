@@ -1,5 +1,3 @@
-package traincommute;
-
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -129,6 +127,10 @@ public class Graph {
 	}
 	
 	public int tripsWithStops(String start, String end, int stops, boolean exact){
+		if(start == null || end == null || stops == 0)
+			return 0;
+		start = start.toUpperCase();
+		end = end.toUpperCase();
 		Vertex begin = vertices.get(start);
 		if(begin == null)
 			return 0;
@@ -161,6 +163,10 @@ public class Graph {
 		}
 	}
 	public int shortestRoute(String start, String end){
+		if(start == null || end == null)
+			return 0;
+		start = start.toUpperCase();
+		end = end.toUpperCase();
 		Vertex v = vertices.get(start);
 		if(v == null)
 			return 0;
@@ -216,6 +222,10 @@ public class Graph {
 	}
 	
 	public int tripsMaxDistance(String start, String end, int distance){
+		if(start == null || end == null || distance == 0)
+			return 0;
+		start = start.toUpperCase();
+		end = end.toUpperCase();
 		Vertex begin = vertices.get(start);
 		if(begin == null)
 			return 0;
